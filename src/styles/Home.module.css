@@ -1,3 +1,143 @@
+.mainWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding-top: 70px;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 4rem;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footerLogo {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(45deg, #fff, rgba(143, 98, 211, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footerTagline {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.socialLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.socialLink:hover {
+  color: #fff;
+  background: rgba(143, 98, 211, 0.8);
+  transform: translateY(-2px);
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footerSection h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.footerLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: rgba(143, 98, 211, 0.8);
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerBottom {
+    padding: 2rem 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerLinks {
+    grid-template-columns: 1fr;
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -9,18 +149,116 @@
   animation: rotategradient 5s infinite ease-in-out;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(112.68deg, #0f1115 0%, rgba(143, 98, 211, 0.29) 100%);
+  padding-top: 100px; /* Adjust this value based on your navbar height */
 }
-.nav {
-  display: flex;
+
+.navbar {
   width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navContent {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
-.link_cont {
+
+.logoContainer {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: "Readex Pro", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+}
+
+.navCenter {
   display: flex;
-  justify-content: center;
+  gap: 2rem;
   align-items: center;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+.activeLink {
+  color: #fff;
+  position: relative;
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(143, 98, 211, 1), rgba(143, 98, 211, 0.5));
+  border-radius: 2px;
+}
+
+.authButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.loginBtn {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.loginBtn:hover {
+  color: #fff;
+}
+
+.signupBtn {
+  padding: 0.5rem 1rem;
+  background: rgba(143, 98, 211, 0.9);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.signupBtn:hover {
+  background: rgba(143, 98, 211, 1);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .navCenter {
+    display: none;
+  }
+  
+  .navContent {
+    padding: 0 1rem;
+  }
 }
 
 .cname {
@@ -99,4 +337,989 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(2px);
   border-radius: 47px;
+}
+
+.uploadContainer {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.uploadContainer::before {
+  content: "Recapture";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: "Readex Pro", sans-serif;
+  font-size: 1.2rem;
+  color: rgba(143, 98, 211, 0.5);
+}
+
+.uploadTitle {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.fileInput {
+  width: 80%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+.fileInput:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.uploadButton {
+  width: 80%;
+  padding: 1rem;
+  background: rgba(143, 98, 211, 0.5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.uploadButton:hover {
+  background: rgba(143, 98, 211, 0.7);
+}
+
+.uploadButton:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.minutesSection {
+  height: 100%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.minutesTitle {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 2rem;
+  color: rgba(143, 98, 211, 0.8);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.minutesTitle::before {
+  content: "📝";
+  font-size: 1.8rem;
+}
+
+.minutesContent {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(143, 98, 211, 0.3);
+}
+
+.lastGenerationsSection {
+  height: 100%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.lastGenerationsTitle {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 2rem;
+  color: rgba(143, 98, 211, 0.8);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lastGenerationsTitle::before {
+  content: "📜";
+  font-size: 1.8rem;
+}
+
+.generationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.generationCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(143, 98, 211, 0.3);
+  border-radius: 12px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.generationCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.generationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.generationHeader h3 {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.generationDate {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.generationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: rgba(143, 98, 211, 0.8);
+}
+
+.preview {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sdkContainer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sdkHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sdkHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, rgba(143, 98, 211, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sdkHeader p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sdkSection {
+  margin-bottom: 3rem;
+}
+
+.sdkSection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: rgba(143, 98, 211, 0.8);
+}
+
+.installCommand {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.installCommand code {
+  font-family: 'Courier New', monospace;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.copyButton {
+  background: rgba(143, 98, 211, 0.5);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background: rgba(143, 98, 211, 0.7);
+}
+
+.inlineLink {
+  color: rgba(143, 98, 211, 0.8);
+  text-decoration: underline;
+}
+
+.codeExamples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.codeBlock {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeHeader {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.codeBlock pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  font-family: 'Courier New', monospace;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.apiMethods {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.methodCard {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.methodCard h3 {
+  color: rgba(143, 98, 211, 0.8);
+  margin-bottom: 1rem;
+}
+
+.methodCard h4 {
+  margin: 1rem 0 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.methodCard ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.methodCard li {
+  margin: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.methodCard code {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.loginContainer {
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loginBox {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(143, 98, 211, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 440px;
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.loginHeader h1 {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.loginHeader p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.formGroup input {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: rgba(143, 98, 211, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.formGroup input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.loginButton {
+  background: rgba(143, 98, 211, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.loginButton:hover {
+  background: rgba(143, 98, 211, 0.7);
+}
+
+.loginButton:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.loginFooter {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loginFooter p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.forgotPassword {
+  color: rgba(143, 98, 211, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.successMessage p {
+  margin: 0.5rem 0;
+}
+
+.smallText {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.passwordStrength {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.passwordStrength.weak {
+  color: #ff4d4d;
+}
+
+.passwordStrength.medium {
+  color: #ffd700;
+}
+
+.passwordStrength.strong {
+  color: #00ff00;
+}
+
+.pricingContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.pricingHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pricingHeader h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, rgba(143, 98, 211, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricingHeader p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pricingCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pricingCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.popularPlan {
+  border: 2px solid rgba(143, 98, 211, 0.5);
+  transform: scale(1.05);
+}
+
+.popularPlan:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(143, 98, 211, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.planHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.planHeader h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.planPrice {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.currency {
+  font-size: 1.5rem;
+  align-self: flex-start;
+}
+
+.period {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  align-self: flex-end;
+}
+
+.planDescription {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.featuresList li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkmark {
+  color: rgba(143, 98, 211, 0.8);
+  font-weight: bold;
+}
+
+.planCTA {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.planCTA:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.popularCTA {
+  background: rgba(143, 98, 211, 0.8);
+}
+
+.popularCTA:hover {
+  background: rgba(143, 98, 211, 1);
+}
+
+.pricingFAQ {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricingFAQ h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.faqItem h3 {
+  color: rgba(143, 98, 211, 0.8);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.faqItem p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .pricingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingContainer {
+    padding: 2rem 1rem;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .popularPlan {
+    transform: none;
+  }
+
+  .popularPlan:hover {
+    transform: translateY(-5px);
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.homeContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.heroSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heroSection h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #fff, rgba(143, 98, 211, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.heroSection p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+
+.uploadSection {
+  position: sticky;
+  top: 90px;
+  height: fit-content;
+}
+
+.uploadCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.uploadHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.uploadHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.uploadArea {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.uploadArea.dragging {
+  border-color: rgba(143, 98, 211, 0.8);
+  background: rgba(143, 98, 211, 0.1);
+}
+
+.uploadArea:hover {
+  border-color: rgba(143, 98, 211, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadLabel {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uploadIcon {
+  color: rgba(143, 98, 211, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.uploadText {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.uploadSubtext {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fileName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: rgba(143, 98, 211, 0.8);
+}
+
+.fileName::before {
+  content: '🎵';
+}
+
+.generateButton {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(143, 98, 211, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.generateButton:hover:not(:disabled) {
+  background: rgba(143, 98, 211, 1);
+  transform: translateY(-1px);
+}
+
+.generateButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.minutesCard, .historySection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.minutesHeader, .historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.minutesHeader h2, .historyHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.historyHeader {
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.copyButton {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.minutesContent {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: monospace;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.historyGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.meetingCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.meetingCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.meetingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.meetingHeader h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.meetingDate {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.meetingDetails {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(143, 98, 211, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .uploadSection {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    padding: 1rem;
+  }
+
+  .heroSection h1 {
+    font-size: 2rem;
+  }
+
+  .heroSection p {
+    font-size: 1rem;
+  }
+
+  .uploadCard, .minutesCard, .historySection {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection h1 {
+    font-size: 1.75rem;
+  }
+
+  .uploadArea {
+    padding: 2rem 1rem;
+  }
+
+  .uploadText {
+    font-size: 1rem;
+  }
+
+  .uploadSubtext {
+    font-size: 0.8rem;
+  }
+
+  .meetingCard {
+    padding: 1rem;
+  }
 }
