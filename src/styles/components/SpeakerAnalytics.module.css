@@ -1,0 +1,120 @@
+.analyticsContainer {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabButton {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabButton.active {
+  background: rgba(143, 98, 211, 0.5);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timelineRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.speakerInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 150px;
+}
+
+.speakerAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+}
+
+.timelineBar {
+  flex: 1;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.segment {
+  position: absolute;
+  height: 100%;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.segment:hover {
+  opacity: 1;
+}
+
+.contributions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contributionBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.barContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bar {
+  height: 24px;
+  background: rgba(143, 98, 211, 0.5);
+  border-radius: 12px;
+  transition: width 0.5s ease;
+}
+
+.percentage {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  min-width: 48px;
+}
+
+@media (max-width: 768px) {
+  .speakerInfo {
+    width: 120px;
+  }
+
+  .speakerAvatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+} 

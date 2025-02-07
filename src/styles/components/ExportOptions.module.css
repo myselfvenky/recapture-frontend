@@ -1,0 +1,110 @@
+.exportContainer {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.exportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.formatSelector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.formatButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.formatButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.formatButton.active {
+  background: rgba(143, 98, 211, 0.5);
+}
+
+.optionsButton {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.optionsPanel {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.optionLabel input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: rgba(143, 98, 211, 0.8);
+}
+
+.exportButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(143, 98, 211, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exportButton:hover {
+  background: rgba(143, 98, 211, 1);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .exportHeader {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .formatSelector {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .optionsButton {
+    width: 100%;
+  }
+} 

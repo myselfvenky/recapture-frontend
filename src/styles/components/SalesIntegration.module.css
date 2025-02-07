@@ -1,0 +1,173 @@
+.salesContainer {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tabButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tabButton.active {
+  background: rgba(143, 98, 211, 0.5);
+}
+
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metricCard {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.metricHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: rgba(143, 98, 211, 0.8);
+}
+
+.metricHeader h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.scoreCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin: 1rem auto;
+}
+
+.interestList, .painPointsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.interestList li, .painPointsList li {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.interestList li::before {
+  content: '•';
+  color: rgba(143, 98, 211, 0.8);
+  position: absolute;
+  left: 0;
+}
+
+.competitorTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.competitorTag {
+  background: rgba(143, 98, 211, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.sentimentAnalysis {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.keyMoments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.keyMoments li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.timestamp {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+}
+
+.positive { color: #4CAF50; }
+.neutral { color: #FFC107; }
+.negative { color: #F44336; }
+
+.actionItems {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.actionList {
+  list-style: none;
+  padding: 0;
+}
+
+.actionList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.actionList input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: rgba(143, 98, 211, 0.8);
+}
+
+.actionList label {
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .insightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabButtons {
+    flex-direction: column;
+  }
+} 

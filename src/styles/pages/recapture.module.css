@@ -1,0 +1,374 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: calc(100vh - 70px); /* Account for navbar height */
+  display: flex;
+  flex-direction: column;
+}
+
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.uploadSection {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadCard {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.uploadHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.uploadArea {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadArea.dragging {
+  border-color: rgba(143, 98, 211, 0.8);
+  background: rgba(143, 98, 211, 0.1);
+}
+
+.uploadArea:hover {
+  border-color: rgba(143, 98, 211, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadLabel {
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.uploadIcon {
+  color: rgba(143, 98, 211, 0.8);
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+}
+
+.uploadText {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.uploadSubtext {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fileName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: rgba(143, 98, 211, 0.8);
+}
+
+.fileName::before {
+  content: '🎵';
+}
+
+.generateButton {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(143, 98, 211, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.generateButton:hover:not(:disabled) {
+  background: rgba(143, 98, 211, 1);
+  transform: translateY(-1px);
+}
+
+.generateButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progressContainer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progressStatus {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(143, 98, 211, 0.8), rgba(143, 98, 211, 1));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.progressPercentage {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.minutesCard, .historySection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 500px;
+}
+
+.minutesHeader, .historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.minutesHeader h2, .historyHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.historyHeader {
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.copyButton {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.minutesContent {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Readex Pro', monospace;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  height: calc(100% - 70px); /* Account for header */
+  overflow-y: auto;
+}
+
+.meetingCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.meetingCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.meetingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.meetingHeader h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.meetingDate {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.meetingDetails {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(143, 98, 211, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .uploadCard, .minutesCard, .historySection {
+    padding: 1rem;
+  }
+
+  .uploadArea {
+    padding: 2rem 1rem;
+  }
+
+  .uploadText {
+    font-size: 1.1rem;
+  }
+
+  .uploadIcon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .uploadArea {
+    padding: 1.5rem 1rem;
+  }
+
+  .uploadText {
+    font-size: 1rem;
+  }
+
+  .uploadSubtext {
+    font-size: 0.8rem;
+  }
+
+  .meetingCard {
+    padding: 1rem;
+  }
+}
+
+.modeSelector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modeButton {
+  flex: 1;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modeButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.modeButton.active {
+  background: rgba(143, 98, 211, 0.5);
+} 

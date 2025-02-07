@@ -1,0 +1,68 @@
+.languageSelector {
+  position: relative;
+  z-index: 1000;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.languageButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.languageDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 160px;
+  backdrop-filter: blur(10px);
+}
+
+.languageOption {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.languageOption:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.languageOption.selected {
+  background: rgba(143, 98, 211, 0.3);
+  color: white;
+}
+
+.detected {
+  font-size: 0.8em;
+  color: rgba(143, 98, 211, 0.8);
+  margin-left: 0.5rem;
+}
+
+.checkmark {
+  color: rgba(143, 98, 211, 0.8);
+} 
