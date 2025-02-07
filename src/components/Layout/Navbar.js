@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from 'next/router';
 import styles from '@/styles/Home.module.css';
 import LanguageSelector from '../LanguageSelector';
+import Logo from '../Logo';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 export default function Navbar() {
@@ -23,9 +24,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContent}>
-        <Link href="/" className={styles.logoContainer} onClick={closeMenu}>
-          <h1 className={styles.logo}>Recapture</h1>
-        </Link>
+        <Logo onClick={closeMenu} />
 
         <button 
           className={styles.menuButton}

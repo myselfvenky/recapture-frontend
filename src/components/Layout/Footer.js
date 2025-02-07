@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 import { BsTwitterX, BsGithub, BsLinkedin, BsDiscord } from "react-icons/bs";
-import Image from 'next/image';
+import Logo from '../Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,9 +36,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerBrand}>
-          <Link href="/" className={styles.footerLogo}>
-            Recapture
-          </Link>
+          <Logo variant="footer" />
           <p className={styles.footerTagline}>
             Transform your meetings into actionable insights with AI-powered minutes
           </p>

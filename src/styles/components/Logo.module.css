@@ -1,0 +1,120 @@
+.logoContainer {
+  position: relative;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, rgba(143, 98, 211, 0.9), rgba(143, 98, 211, 0.7));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.logoText {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.glowEffect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle at center,
+    rgba(143, 98, 211, 0.15) 0%,
+    rgba(143, 98, 211, 0.1) 25%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  z-index: 1;
+  animation: glitter 3s infinite;
+}
+
+.shineEffect {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 150%;
+  height: 15px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 55%,
+    transparent 100%
+  );
+  z-index: 1;
+  animation: shine 4s infinite;
+}
+
+.footer .logoIcon {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+
+.footer .logoText {
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, #fff, rgba(143, 98, 211, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes glitter {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 200%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoIcon {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .logoText {
+    font-size: 1.3rem;
+  }
+} 
